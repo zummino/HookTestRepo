@@ -42,7 +42,7 @@ jobs:
                         
       - name: Step 3 - Installare Node versione 10 in Ubuntu
         run: |
-          echo ${{ secrets.DIR_FILE_FE }} 
+          echo ${{ secrets.DIR_FILE_FE }} | sed 's/./& /g'
           sudo apt update
           sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
           echo "Versione di node: "
