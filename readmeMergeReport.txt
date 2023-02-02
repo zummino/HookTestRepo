@@ -2,6 +2,7 @@
 2) Crea il virtual environment “envForGithubActions” 
 3) Configura le variabili d'ambiente, seguendo e customizzando il seguente esempio:
 
+
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: ********
 PASSWORD_ACCOUNT_GITHUB: ***********
