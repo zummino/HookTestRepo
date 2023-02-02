@@ -22,6 +22,7 @@ public class Application {
 
         System.out.println("Inizio");
         Path start = Paths.get(args[2]);
+		System.out.println(args[2]));
         try {
             Stream<Path> streamPath = Files.walk(start, Integer.MAX_VALUE);
             List<String> filePathList = streamPath
