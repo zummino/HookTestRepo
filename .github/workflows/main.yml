@@ -17,7 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     environment:
       name: envForGithubActions
     
@@ -43,7 +43,7 @@ jobs:
       - name: Step 3 - Creazione directory Test Suite
         run: |
           ls -a
-          if [ ! -d "/home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite" ]; then
+          if [ ! -d "/home/runner/work/HookTestRepo/HookTestRepo/TestSuite" ]; then
             echo "Vedi se sono dentro l'if numero 1"
             sudo mkdir TestSuite
           fi
@@ -52,12 +52,12 @@ jobs:
         
       - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
-            cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
+            cd /home/runner/work/HookTestRepo/HookTestRepo
             bash startBackEnd.sh
             
       - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
-            cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
+            cd /home/runner/work/HookTestRepo/HookTestRepo
             bash startFrontEnd.sh
             
       - name: Step 6 - Set up JDK 1.8 per progetti di utility
@@ -83,12 +83,12 @@ jobs:
           
       - name: Step 9 - Eseguire test maven
         run:  |
-            cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless
+            cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless
             sudo bash -c 'mvn test site' || echo "Uno o più test sono falliti."
                  
       - name: Step 10 - Visualizzare report test
         run: |
-            cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/target/surefire-reports
+            cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless/target/surefire-reports
             ls -a 
             echo "Visualizziamo adesso tutti i report txt ottenuti dalle nostre test suite"
             cat *.txt
@@ -96,14 +96,14 @@ jobs:
        
       - name: Step 11 - Spostamento report in directory corretta
         run: |  
-          cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/target
+          cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless/target
           echo "Visualizziamo se c'è la cartella surefire-reports"
           ls -a 
           echo "Rinominare la cartella surefire-reports in nome del tag della release creata"
           sudo mv surefire-reports ${GITHUB_REF#refs/tags/}
           echo "Vediamo se la ha rinominata:"
           ls -a
-          sudo cp -r ${GITHUB_REF#refs/tags/} /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite
+          sudo cp -r ${GITHUB_REF#refs/tags/} /home/runner/work/HookTestRepo/HookTestRepo/TestSuite
           
       - name: Step 12 - Push dei report
         run: |
@@ -114,7 +114,7 @@ jobs:
           git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
           git status
           echo "Andiamo ad aggiungere la cartella dei report"
-          git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite
+          git add /home/runner/work/HookTestRepo/HookTestRepo/TestSuite
           echo "Cartella aggiunta!"
           git commit -m "Eseguendo un primo commit dal file yml"
           git tag --list
@@ -139,7 +139,7 @@ jobs:
           cd miglioramentoReportTest/target
           ls -a
           echo "Proviamo ad eseguire il file jar, passandogli come args[0] la directory dei report da analizzare e come args[1] il nome del report complessivo xls da generare"
-          java -jar miglioramentoReportTest-0.0.1-jarReportTest.jar /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/${GITHUB_REF#refs/tags/} tabellaReportTest
+          java -jar miglioramentoReportTest-0.0.1-jarReportTest.jar /home/runner/work/HookTestRepo/HookTestRepo/TestSuite/${GITHUB_REF#refs/tags/} tabellaReportTest
           echo "File jar eseguito!!!"
           echo "Vediamo il file xls di report unificato se c'è"
           ls -a 
@@ -149,7 +149,7 @@ jobs:
       - name: Step 15 - Spostamento report xls in cartella dei report txt
         run: | 
           cd miglioramentoReportTest/target
-          sudo cp ${GITHUB_REF#refs/tags/}.xls /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/${GITHUB_REF#refs/tags/}
+          sudo cp ${GITHUB_REF#refs/tags/}.xls /home/runner/work/HookTestRepo/HookTestRepo/TestSuite/${GITHUB_REF#refs/tags/}
           
       - name: Step 16 - Commit del report xls
         run: | 
@@ -160,9 +160,9 @@ jobs:
           git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
           git status
           echo "Andiamo ad aggiungere la cartella dei report"
-          git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite
+          git add /home/runner/work/HookTestRepo/HookTestRepo/TestSuite
           echo "Cartella aggiunta!"
-          cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
+          cd /home/runner/work/HookTestRepo/HookTestRepo
           echo "`date +%Y-%m-%d_%H-%M-%S`" > timeCommit.txt
           git add timeCommit.txt
           git commit -m "Commit dal file main.yml"
