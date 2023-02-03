@@ -37,9 +37,9 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  }
   @Test
 
-  public void testUntitledTestCase() throws Exception {
+  public void test_01() throws Exception {
 
-driver.get("http://localhost:4200/");
+driver.get("http://localhost:3001/");
 driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
 driver.findElement(By.xpath("//h1[normalize-space()='Angular With Java']")).click();
 driver.findElement(By.xpath("//div[normalize-space()='3']")).click();
