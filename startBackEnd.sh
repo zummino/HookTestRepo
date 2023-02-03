@@ -5,9 +5,9 @@ echo "Installata versione di java numero"
 java -version 
 
 echo "Inizio comandi esecuzione Backend"
-cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/root/backend
+cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app
 mvn clean install
-cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/root/backend/target
+cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/target
 echo "Vediamo quali file jar si trovano in cartella target"
 ls -a
 java -jar backend-0.0.1-SNAPSHOT.jar &
