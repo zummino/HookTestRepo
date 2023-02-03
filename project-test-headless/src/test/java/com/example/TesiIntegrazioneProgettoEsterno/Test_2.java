@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class UntitledTestCase {
+public class Test_2 {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
