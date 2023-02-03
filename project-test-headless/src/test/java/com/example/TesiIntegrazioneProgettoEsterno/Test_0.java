@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class UntitledTestCase {
+public class Test_0 {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
@@ -37,7 +37,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  }
   @Test
 
-  public void Test_0() throws Exception {
+  public void Test_0_1() throws Exception {
 
 driver.get("http://localhost:3001/");
 driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).click();
