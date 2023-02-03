@@ -7,10 +7,10 @@ java -version
 echo "Inizio comandi esecuzione Backend"
 pwd
 ls -a
-cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app
+cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
 ls -a
 mvn clean install
-cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/target
+cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master/target
 echo "Vediamo quali file jar si trovano in cartella target"
 ls -a
 java -jar backend-0.0.1-SNAPSHOT.jar &
