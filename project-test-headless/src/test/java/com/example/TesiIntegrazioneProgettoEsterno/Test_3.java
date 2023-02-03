@@ -37,7 +37,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  }
   @Test
 
-  public void testUntitledTestCase() throws Exception {
+  public void test_03() throws Exception {
 
 driver.get("http://localhost:3001/");
 driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).click();
