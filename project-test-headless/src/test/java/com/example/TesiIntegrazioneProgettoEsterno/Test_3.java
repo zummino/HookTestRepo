@@ -48,8 +48,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div[2]/div/input")).clear();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div[2]/div/input")).sendKeys("si");
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/button")).click();
-    assertEquals("6",driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div")).getText());
-    assertEquals("de luca",driver.findElement(By.xpath("//html/body/app-root/div[2]/app-users/div/table/tbody/tr[4]/td[3]")).getText());
+    assertEquals("4",driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div")).getText());
+    assertEquals("marco",driver.findElement(By.xpath("//html/body/app-root/div[2]/app-users/div/table/tbody/tr[4]/td[3]")).getText());
   }
 
 

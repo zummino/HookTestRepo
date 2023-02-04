@@ -48,8 +48,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//input[@ng-reflect-name='email']")).clear();
     driver.findElement(By.xpath("//input[@ng-reflect-name='email']")).sendKeys("si");
     driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
-    assertEquals("6",driver.findElement(By.xpath("//div[normalize-space()='6']")).getText());
-    assertEquals("de luca",driver.findElement(By.xpath("//td[normalize-space()='de luca']")).getText());
+    assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='6']")).getText());
+    assertEquals("marco",driver.findElement(By.xpath("//td[normalize-space()='de luca']")).getText());
   }
 
 
