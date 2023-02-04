@@ -36,7 +36,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void test_3() throws Exception{
+  public void test_loc_abs_release_1_0() throws Exception{
     driver.get("http://localhost:3001/");
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).click();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).clear();
