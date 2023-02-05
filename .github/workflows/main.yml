@@ -54,8 +54,13 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+          
+      - name: Step 5 - Set up Node
+        uses: actions/setup-node@v3
+        with:
+            node-version: 12
 
-      - name: Step 5 - Cache Maven pakages
+      - name: Step 6 - Cache Maven pakages
         id: cache-mvn
         uses: actions/cache@v2
         with:
@@ -64,23 +69,27 @@ jobs:
             restore-keys: ${{ runner.os }}-m2-
       
       - if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
-        name: mvn clean install BACK-END
+        name: Step 7 - mvn clean install BACK-END
         working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
         run: mvn clean install
 
              
-      - name: Step 6 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
+      - name: Step 7.1 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
             cd /home/runner/work/HookTestRepo/HookTestRepo
             bash startBackEnd.sh
             
-      - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
+      - name: Step 8 - npm install FRONT-END
+        working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master/src/main/ui
+        run: npm install
+      
+      - name: Step 8.1 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
             cd /home/runner/work/HookTestRepo/HookTestRepo
             bash startFrontEnd.sh
             
                                  
-      - name: Step 7 - Install Chrome Headless
+      - name: Step 9 - Install Chrome Headless
         run: |
           
           sudo apt-get install -y libappindicator1 fonts-liberation
@@ -89,18 +98,13 @@ jobs:
           sudo apt-get -f install
           google-chrome-stable --headless --disable-gpu    
           
-      - name: Step 8 - Install Chrome-Driver for test junit
-        run:  |
             
-            echo "Step 8 cancellato"
-            
-          
-      - name: Step 9 - Eseguire test maven
+      - name: Step 10 - Eseguire test maven
         run:  |
             cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless
             sudo bash -c 'mvn test site' || echo "Uno o più test sono falliti."
                  
-      - name: Step 10 - Visualizzare report test
+      - name: Step 11 - Visualizzare report test
         run: |
             cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless/target/surefire-reports
             ls -a 
@@ -108,7 +112,7 @@ jobs:
             cat *.txt
             echo "Fine visualizzazione report!!!"                
        
-      - name: Step 11 - Spostamento report in directory corretta
+      - name: Step 12 - Spostamento report in directory corretta
         run: |  
           cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless/target
           echo "Visualizziamo se c'è la cartella surefire-reports"
@@ -119,7 +123,7 @@ jobs:
           ls -a
           sudo cp -r ${GITHUB_REF#refs/tags/} /home/runner/work/HookTestRepo/HookTestRepo/TestSuite
           
-      - name: Step 12 - Push dei report
+      - name: Step 13 - Push dei report
         run: |
           echo "Vediamo quali cartelle ci sono nella directory di partenza"
           ls -a
@@ -139,7 +143,7 @@ jobs:
           git push -u origin ${GITHUB_REF#refs/tags/} --force
           echo "Push effettuato"         
           
-      - name: Step 13 - Unzip progetto "Miglioramento report test"
+      - name: Step 14 - Unzip progetto "Miglioramento report test"
         run: |
           ls 
           echo "Unzip del progetto"
@@ -147,7 +151,7 @@ jobs:
           echo "Progetto zippato"
           ls                    
           
-      - name: Step 14 - Esecuzione progetto "Miglioramento report test"
+      - name: Step 15 - Esecuzione progetto "Miglioramento report test"
         run: |    
           echo "Andiamo nella directory dove si trova il file jar eseguibile"
           cd miglioramentoReportTest/target
@@ -160,12 +164,12 @@ jobs:
           echo "Vediamo il contenuto del file xls di report unificato!!!"
           sudo mv tabellaReportTest.xls ${GITHUB_REF#refs/tags/}.xls
           
-      - name: Step 15 - Spostamento report xls in cartella dei report txt
+      - name: Step 16 - Spostamento report xls in cartella dei report txt
         run: | 
           cd miglioramentoReportTest/target
           sudo cp ${GITHUB_REF#refs/tags/}.xls /home/runner/work/HookTestRepo/HookTestRepo/TestSuite/${GITHUB_REF#refs/tags/}
           
-      - name: Step 16 - Commit del report xls
+      - name: Step 17 - Commit del report xls
         run: | 
           echo "Vediamo quali cartelle ci sono nella directory di partenza"
           ls -a          

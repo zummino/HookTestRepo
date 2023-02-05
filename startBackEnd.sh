@@ -1,15 +1,15 @@
 echo "Inizio comandi installazione precondizioni"
-sudo apt update
-sudo apt install openjdk-11-jdk openjdk-11-jre
-echo "Installata versione di java numero"
+#sudo apt update
+#sudo apt install openjdk-11-jdk openjdk-11-jre
+#echo "Installata versione di java numero"
 java -version 
 
 echo "Inizio comandi esecuzione Backend"
-pwd
-ls -a
-cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
-ls -a
-mvn clean install
+#pwd
+#ls -a
+#cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
+#ls -a
+#mvn clean install
 cd /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master/target
 echo "Vediamo quali file jar si trovano in cartella target"
 ls -a
