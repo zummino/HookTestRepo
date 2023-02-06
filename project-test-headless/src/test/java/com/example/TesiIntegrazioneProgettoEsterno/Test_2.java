@@ -50,7 +50,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//button[@type='submit']")).click();
     driver.findElement(By.xpath("//button[@class='btn btn-warning']")).click();
     driver.get("http://localhost:3001/");
-	
+	Thread.sleep(10000);
 	assertEquals("4",driver.findElement(By.xpath("//div[@class='number']")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//tr[4]/td[3]")).getText());
   }
