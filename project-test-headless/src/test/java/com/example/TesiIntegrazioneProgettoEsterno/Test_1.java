@@ -37,7 +37,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  }
   @Test
   public void test_loc_Rel_release_1_1() throws Exception{
-    Thread.sleep(5000);
+    driver.get("http://localhost:3001/");
+	Thread.sleep(5000);
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).clear();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).sendKeys("Marco");
