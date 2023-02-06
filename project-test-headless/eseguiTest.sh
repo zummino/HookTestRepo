@@ -4,7 +4,7 @@ for f in ./src/test/java/com/example/TesiIntegrazioneProgettoEsterno/*.java;
 do 
 	pwd
 	echo "Processing $f file..."; 
-	sleep 5
+	sleep 20
 	echo "Processing ${f##*/} file...";
 	mvn test -Dtest=${f##*/}
 	
