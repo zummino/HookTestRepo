@@ -49,7 +49,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//input[@ng-reflect-name='email']")).sendKeys("prova@gmail.com");
     driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
     driver.findElement(By.xpath("//button[normalize-space()='Get All Users']")).click();
-    assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
+    driver.get("http://localhost:3001/");
+	assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
   }
 

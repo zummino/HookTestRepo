@@ -49,7 +49,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div[2]/div/input")).sendKeys("prova@gmail.com");
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/button")).click();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div[2]/button")).click();
-    assertEquals("4",driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div")).getText());
+    driver.get("http://localhost:3001/");
+	assertEquals("4",driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//html/body/app-root/div[2]/app-users/div/table/tbody/tr[4]/td[3]")).getText());
   }
 

@@ -49,7 +49,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//input[@formcontrolname='email']")).sendKeys("prova@gmail.com");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
     driver.findElement(By.xpath("//button[@class='btn btn-warning']")).click();
-    assertEquals("4",driver.findElement(By.xpath("//div[@class='number']")).getText());
+    driver.get("http://localhost:3001/");
+	assertEquals("4",driver.findElement(By.xpath("//div[@class='number']")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//tr[4]/td[3]")).getText());
   }
 
