@@ -38,6 +38,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Robula_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
+	Thread.sleep(5000);
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).click();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).clear();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).sendKeys("Marco");
@@ -50,7 +51,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//button[@type='submit']")).click();
     driver.findElement(By.xpath("//button[@class='btn btn-warning']")).click();
     driver.get("http://localhost:3001/");
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	assertEquals("4",driver.findElement(By.xpath("//div[@class='number']")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//tr[4]/td[3]")).getText());
   }

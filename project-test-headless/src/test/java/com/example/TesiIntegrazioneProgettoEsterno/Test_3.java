@@ -38,7 +38,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Abs_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
-    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).click();
+    Thread.sleep(5000);
+	driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).click();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).clear();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).sendKeys("Marco");
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div[2]/input")).click();
@@ -50,7 +51,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/button")).click();
     driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div[2]/button")).click();
     driver.get("http://localhost:3001/");
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	assertEquals("4",driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//html/body/app-root/div[2]/app-users/div/table/tbody/tr[4]/td[3]")).getText());
   }

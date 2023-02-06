@@ -37,7 +37,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  }
   @Test
   public void test_loc_Rel_release_1_1() throws Exception{
-    driver.get("http://localhost:3001/");
+    Thread.sleep(5000);
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).clear();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).sendKeys("Marco");
@@ -50,7 +50,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
     driver.findElement(By.xpath("//button[normalize-space()='Get All Users']")).click();
     driver.get("http://localhost:3001/");
-	Thread.sleep(10000);
+	Thread.sleep(5000);
 	assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
     assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
   }

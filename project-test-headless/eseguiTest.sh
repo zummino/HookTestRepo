@@ -4,17 +4,18 @@ for f in ./src/test/java/com/example/TesiIntegrazioneProgettoEsterno/*.java;
 do 
 	pwd
 	echo "Processing $f file..."; 
-	sleep 20
+	sleep 15
 	echo "Processing ${f##*/} file...";
 	mvn test -Dtest=${f##*/}
 	
-	echo "Ho eseguito il test $f, ora spengo il BackEnd";
+	echo "*****Ho eseguito il test $f, ora spengo il BackEnd*****";
+	
 	echo "curl -X POST http://localhost:8080/actuator/shutdown/";
 	
 	curl -X POST http://localhost:8080/actuator/shutdown/
 	
 	echo "BackEnd spento";
-	sleep 5
+	sleep 6
 	echo "Riavvio il BackEnd";
 	cd /home/runner/work/HookTestRepo/HookTestRepo
 	pwd
