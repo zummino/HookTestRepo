@@ -102,7 +102,7 @@ jobs:
       - name: Step 10 - Eseguire test maven
         run:  |
             cd /home/runner/work/HookTestRepo/HookTestRepo/project-test-headless
-            sudo bash -c 'mvn test site' || echo "Uno o più test sono falliti."
+            bash eseguiTest.sh
                  
       - name: Step 11 - Visualizzare report test
         run: |
