@@ -4,7 +4,8 @@ for f in ./src/test/java/com/example/TesiIntegrazioneProgettoEsterno/*.java;
 do 
 	pwd
 	echo "Processing $f file..."; 
-	mvn test -Dtest=$f
+	echo "Processing ${f##*/} file...";
+	mvn test -Dtest=${f##*/}
 	
 	echo "Ho eseguito il test $f, ora spengo il BackEnd";
 	echo "curl -X POST http://localhost:8080/actuator/shutdown/";
