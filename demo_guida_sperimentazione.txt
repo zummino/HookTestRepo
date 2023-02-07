@@ -6,6 +6,7 @@ Come replicare la sperimentazione
 
 2) scaricare Sublime Merge e configurarlo per lavorare con la repository appena forkata
 
+
 3) fare pull in locale della repo
 
 4) andare nella cartella della repo in cui è presente la web app ed eseguire npm install la prima volta
