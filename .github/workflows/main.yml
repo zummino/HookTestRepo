@@ -85,7 +85,7 @@ jobs:
         
       - name: Step 8.0 - sudo ps -a
         run:  |
-          ps -a
+          ps
       
       - name: Step 8.1 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
@@ -94,7 +94,7 @@ jobs:
       
       - name: Step 8.2 - sudo ps -a
         run:  |
-          ps -a            
+          ps            
                                  
       - name: Step 9 - Install Chrome Headless
         run: |
