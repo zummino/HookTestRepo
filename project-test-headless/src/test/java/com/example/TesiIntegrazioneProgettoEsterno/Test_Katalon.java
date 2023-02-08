@@ -39,6 +39,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
   public void test_loc_Katalon_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
     Thread.sleep(5000);
+	String a = driver.getTitle();
+	System.out.println(a);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).clear();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).sendKeys("Marco");
