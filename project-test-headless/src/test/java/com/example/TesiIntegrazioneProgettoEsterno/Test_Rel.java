@@ -59,9 +59,11 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
     driver.findElement(By.xpath("//button[normalize-space()='Get All Users']")).click();
     System.out.println("F I N I T O ");
-	Thread.sleep(5000);
-    //assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
-    //assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
+    Thread.sleep(5000);
+    System.out.println("FINITO LA SLEEP");
+    assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
+    System.out.println("DOPO LA ASSERT");
+	  //assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
   }
 
 
