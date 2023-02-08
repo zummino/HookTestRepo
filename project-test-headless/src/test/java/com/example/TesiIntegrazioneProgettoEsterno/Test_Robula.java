@@ -42,6 +42,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	String a = driver.findElement(By.xpath("//html/body")).getText();
 	System.out.println(a);
 	driver.findElement(By.xpath("//html/body")).click();
+	driver.findElement(By.xpath("//html/body")).click();
+	System.out.println(driver.getPageSource());
 	System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).click();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).clear();
