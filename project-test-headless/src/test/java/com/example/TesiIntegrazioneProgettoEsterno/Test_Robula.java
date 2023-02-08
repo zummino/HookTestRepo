@@ -43,7 +43,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	System.out.println(a);
 	driver.findElement(By.xpath("//html/body")).click();
 	driver.findElement(By.xpath("//html/body")).click();
-	System.out.println(driver.getPageSource());
+	System.out.println(driver.getPageSource().substring(1131040, 1144047));
 	System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).click();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).clear();

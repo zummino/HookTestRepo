@@ -42,7 +42,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	String a = driver.findElement(By.xpath("//html/body")).getText();
 	System.out.println(a);
 	driver.findElement(By.xpath("//html/body")).click();
-	System.out.println(driver.getPageSource());
+	System.out.println(driver.getPageSource().substring(1131040, 1144047));
 	driver.findElement(By.xpath("//html/body")).click();
 	System.out.println(driver.getPageSource());
 	driver.findElement(By.xpath("//html/body")).click();
