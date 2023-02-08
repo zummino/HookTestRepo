@@ -44,7 +44,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	driver.findElement(By.xpath("//html/body")).click();
 	int len_page = driver.getPageSource().length();
 	System.out.println(len_page);
-	System.out.println(driver.getPageSource().substring(len_page-100, len_page));
+	System.out.println(driver.getPageSource().substring(len_page-8000, len_page));
 	driver.findElement(By.xpath("//html/body")).click();
 	System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
