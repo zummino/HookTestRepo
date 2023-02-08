@@ -38,15 +38,15 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Katalon_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
-	String a = driver.findElement(By.xpath("//html/body")).getText();
-	System.out.println(a);
-	driver.findElement(By.xpath("//html/body")).click();
-	int len_page = driver.getPageSource().length();
-	System.out.println(len_page);
-	System.out.println(driver.getPageSource().substring(len_page-5000, len_page));
-	driver.findElement(By.xpath("//html/body")).click();
-	System.out.println("T R O V A T O ");
+    //Thread.sleep(5000);
+	//String a = driver.findElement(By.xpath("//html/body")).getText();
+	//System.out.println(a);
+	//driver.findElement(By.xpath("//html/body")).click();
+	//int len_page = driver.getPageSource().length();
+	//System.out.println(len_page);
+	//System.out.println(driver.getPageSource().substring(len_page-5000, len_page));
+	//driver.findElement(By.xpath("//html/body")).click();
+	//System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).clear();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).sendKeys("Marco");
@@ -60,8 +60,9 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::button[1]")).click();
     System.out.println("F I N I T O ");
 	Thread.sleep(5000);
-    //assertEquals("4",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::div[1]")).getText());
-    //assertEquals("De Luca",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Marco'])[1]/following::td[1]")).getText());
+    assertEquals("4",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::div[1]")).getText());
+    System.out.println("DOPO PRIMA ASSERT");
+	assertEquals("De Luca",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Marco'])[1]/following::td[1]")).getText());
   }
 
 

@@ -39,15 +39,15 @@ private static StringBuffer verificationErrors = new StringBuffer();
   public void test_loc_Hooks_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
     Thread.sleep(5000);
-	String a = driver.findElement(By.xpath("//html/body")).getText();
-	System.out.println(a);
-	driver.findElement(By.xpath("//html/body")).click();
-	int len_page = driver.getPageSource().length();
-	System.out.println(len_page);
-	System.out.println(driver.getPageSource().substring(len_page-10000, len_page));
-	driver.findElement(By.xpath("//html/body")).click();
-	driver.findElement(By.xpath("//html/body")).click();
-	System.out.println("T R O V A T O ");
+	//String a = driver.findElement(By.xpath("//html/body")).getText();
+	//System.out.println(a);
+	//driver.findElement(By.xpath("//html/body")).click();
+	//int len_page = driver.getPageSource().length();
+	//System.out.println(len_page);
+	//System.out.println(driver.getPageSource().substring(len_page-10000, len_page));
+	//driver.findElement(By.xpath("//html/body")).click();
+	//driver.findElement(By.xpath("//html/body")).click();
+	//System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).click();
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).clear();
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).sendKeys("Marco");
@@ -61,8 +61,9 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-20]//*[@x934110935862-x-test-tpl-1]//*[@x934110935862-x-test-hook-5]")).click();
     System.out.println("F I N I T O ");
 	Thread.sleep(5000);
-    //assertEquals("4",driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-20]//*[@x934110935862-x-test-tpl-1]//*[@x934110935862-x-test-hook-3]")).getText());
-    //assertEquals("De Luca",driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-21]//*[@x934107962964-x-test-hook-22]//*[@x934112684301-x-test-tpl-1]//*[@x934112684301-x-test-hook-11][4]//*[@x934112684301-x-test-hook-14]")).getText());
+    assertEquals("4",driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-20]//*[@x934110935862-x-test-tpl-1]//*[@x934110935862-x-test-hook-3]")).getText());
+    System.out.println("DOPO PRIMA ASSERT");
+	assertEquals("De Luca",driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-21]//*[@x934107962964-x-test-hook-22]//*[@x934112684301-x-test-tpl-1]//*[@x934112684301-x-test-hook-11][4]//*[@x934112684301-x-test-hook-14]")).getText());
   }
 
 

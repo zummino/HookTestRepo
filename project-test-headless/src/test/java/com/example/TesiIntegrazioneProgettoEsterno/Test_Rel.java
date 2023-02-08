@@ -39,14 +39,14 @@ private static StringBuffer verificationErrors = new StringBuffer();
   public void test_loc_Rel_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
     Thread.sleep(5000);
-	String a = driver.findElement(By.xpath("//html/body")).getText();
-	System.out.println(a);
-	driver.findElement(By.xpath("//html/body")).click();
-	int len_page = driver.getPageSource().length();
-	System.out.println(len_page);
-	System.out.println(driver.getPageSource().substring(len_page-8000, len_page));
-	driver.findElement(By.xpath("//html/body")).click();
-	System.out.println("T R O V A T O ");
+	//String a = driver.findElement(By.xpath("//html/body")).getText();
+	//System.out.println(a);
+	//driver.findElement(By.xpath("//html/body")).click();
+	//int len_page = driver.getPageSource().length();
+	//System.out.println(len_page);
+	//System.out.println(driver.getPageSource().substring(len_page-8000, len_page));
+	//driver.findElement(By.xpath("//html/body")).click();
+	//System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).clear();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).sendKeys("Marco");
@@ -60,8 +60,9 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//button[normalize-space()='Get All Users']")).click();
     System.out.println("F I N I T O ");
 	Thread.sleep(5000);
-    //assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
-    //assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
+	assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
+    System.out.println("DOPO PRIMA ASSERT");
+	assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
   }
 
 
