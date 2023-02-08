@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 
-public class Test_Rel{
+public class Test_Abs{
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -27,24 +27,24 @@ public class Test_Rel{
   }
 
   @Test
-  public void test_loc_Rel_release_1_1() throws Exception{
+  public void test_loc_Abs_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
     Thread.sleep(5000);
-    driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
-    driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).clear();
-    driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).sendKeys("mario");
-    driver.findElement(By.xpath("//input[@ng-reflect-name='lastName']")).click();
-    driver.findElement(By.xpath("//input[@ng-reflect-name='lastName']")).clear();
-    driver.findElement(By.xpath("//input[@ng-reflect-name='lastName']")).sendKeys("rossi");
-    driver.findElement(By.xpath("//input[@ng-reflect-name='email']")).click();
-    driver.findElement(By.xpath("//input[@ng-reflect-name='email']")).clear();
-    driver.findElement(By.xpath("//input[@ng-reflect-name='email']")).sendKeys("ciao@ciao.com");
-    driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
-    driver.findElement(By.xpath("//button[normalize-space()='Get All Users']")).click();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).click();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).clear();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div/input")).sendKeys("mario");
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div[2]/input")).click();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div[2]/input")).clear();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div/div[2]/input")).sendKeys("rossi");
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div[2]/div/input")).click();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div[2]/div/input")).clear();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/div[2]/div/input")).sendKeys("ciao@ciao.com");
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div/form/button")).click();
+    driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div[2]/button")).click();
     driver.get("http://localhost:3001/");
     Thread.sleep(5000);
-    assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
-    assertEquals("rossi",driver.findElement(By.xpath("//td[normalize-space()='rossi']")).getText());
+    assertEquals("4",driver.findElement(By.xpath("//html/body/app-root/div/div/div[2]/app-display-board/div/div")).getText());
+    assertEquals("rossi",driver.findElement(By.xpath("//html/body/app-root/div[2]/app-users/div/table/tbody/tr[4]/td[3]")).getText());
   }
 
   @After
