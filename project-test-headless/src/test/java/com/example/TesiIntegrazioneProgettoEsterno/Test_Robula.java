@@ -39,7 +39,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   public void test_loc_Robula_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
     Thread.sleep(5000);
-	String a = driver.getTitle();
+	String a = driver.findElement(By.xpath("//html/body")).getText();
 	System.out.println(a);
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).click();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).clear();
