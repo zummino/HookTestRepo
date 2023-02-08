@@ -42,7 +42,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	String a = driver.findElement(By.xpath("//html/body")).getText();
 	System.out.println(a);
 	driver.findElement(By.xpath("//html/body")).click();
-	System.out.println('Trovato');
+	System.out.println("T R O V A T O ");
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).click();
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).clear();
     driver.findElement(By.xpath("//*[@x934114515538-x-test-tpl-1]//*[@x934114515538-x-test-hook-9]//*[@x934107962964-x-test-tpl-2]//*[@x934107962964-x-test-hook-10]")).sendKeys("Marco");
