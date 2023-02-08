@@ -41,6 +41,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     Thread.sleep(5000);
 	String a = driver.findElement(By.xpath("//html/body")).getText();
 	System.out.println(a);
+	driver.findElement(By.xpath("//html/body")).click();
+	System.out.println('Trovato');
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).click();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).clear();
     driver.findElement(By.xpath("//input[@ng-reflect-name='firstName']")).sendKeys("Marco");

@@ -41,6 +41,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     Thread.sleep(5000);
 	String a = driver.findElement(By.xpath("//html/body")).getText();
 	System.out.println(a);
+	driver.findElement(By.xpath("//html/body")).click();
+	System.out.println('Trovato');
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).clear();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).sendKeys("Marco");
