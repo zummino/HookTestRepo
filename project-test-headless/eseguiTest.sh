@@ -9,13 +9,13 @@ do
 	mvn test -Dtest=${f##*/}
 	
 	echo "*****Ho eseguito il test $f, ora spengo il BackEnd*****";
-	
+	sleep 10
 	echo "curl -X POST http://localhost:8080/actuator/shutdown/";
 	
 	curl -X POST http://localhost:8080/actuator/shutdown/
 	
 	echo "BackEnd spento";
-	sleep 6
+	sleep 10
 	echo "Riavvio il BackEnd";
 	cd /home/runner/work/HookTestRepo/HookTestRepo
 	pwd
