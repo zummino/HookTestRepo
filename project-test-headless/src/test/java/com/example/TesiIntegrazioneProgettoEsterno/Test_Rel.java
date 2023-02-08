@@ -63,7 +63,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     System.out.println("FINITO LA SLEEP");
     assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
     System.out.println("DOPO LA ASSERT");
-	  //assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
+    assertEquals("De Luca",driver.findElement(By.xpath("//td[normalize-space()='De Luca']")).getText());
+    System.out.println("DOPO LA ASSERT 2222222222");
   }
 
 
