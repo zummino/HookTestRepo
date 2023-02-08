@@ -60,6 +60,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::button[1]")).click();
     System.out.println("F I N I T O ");
 	Thread.sleep(5000);
+	String a1 = driver.findElement(By.xpath("//html/body")).getText();
+	System.out.println(a1);	
     assertEquals("4",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::div[1]")).getText());
     System.out.println("DOPO PRIMA ASSERT");
 	assertEquals("De Luca",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Marco'])[1]/following::td[1]")).getText());
