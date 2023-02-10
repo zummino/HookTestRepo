@@ -66,7 +66,9 @@ jobs:
         with:
             path: ~/.m2
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-            restore-keys: ${{ runner.os }}-m2-
+            restore-keys: |
+              ${{ runner.os }}-m2-
+              Linux-m2-158b52b9bf8962677dfd684c7f0502660776f00c491893c0f242885001d93d25
       
       - if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
         name: Step 7 - mvn clean install BACK-END
