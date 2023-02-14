@@ -65,9 +65,10 @@ jobs:
         uses: actions/cache@v2
         with:
             path: ~/.m2
-            key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+            key: ${{ runner.os }}-m2-prova
             restore-keys: |
               ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+              ${{ runner.os }}-m2-prova
               ${{ runner.os }}-m2-${{ github.event.release.v_1a_2a_m1 }}
       
       - if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
