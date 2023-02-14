@@ -68,26 +68,11 @@ jobs:
             key: ${{ runner.os }}-m2-prova
             restore-keys: |
               ${{ runner.os }}-m2-prova
-              
-      - name: Step prova
+                        
+      - name: Step 7 - mvn clean install BACK-END
         if: steps.cache-mvn.outputs.cache-hit != 'true'
         working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
-        run: |
-          echo "ciao fra"
-          echo "${{steps.cache-mvn.out.cache-hit}}"
-          
-      - if: ${{steps.cache-mvn.out.cache-hit != 'true'}}        
-        working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
-        run: |
-          echo "ciao fra2"
-          echo "${{steps.cache-mvn.out.cache-hit}}"
-          
-      - name: Step 7 - mvn clean install BACK-END
-        if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
-        working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
-        run: |
-          echo "${{steps.cache-mvn.out.cache-hit}}"
-          mvn clean install
+        run: mvn clean install
 
              
       - name: Step 7.1 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
