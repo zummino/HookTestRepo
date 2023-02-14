@@ -70,7 +70,7 @@ jobs:
               ${{ runner.os }}-m2-prova
                         
       - name: Step 7 - mvn clean install BACK-END
-        if: steps.cache-mvn.outputs.cache-hit != 'true'
+        if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
         working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
         run: mvn clean install
 
