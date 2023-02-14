@@ -67,12 +67,10 @@ jobs:
             path: ~/.m2
             key: ${{ runner.os }}-m2-prova
             restore-keys: |
-              ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
               ${{ runner.os }}-m2-prova
-              ${{ runner.os }}-m2-${{ github.event.release.v_1a_2a_m1 }}
-      
+              
       - name: Step prova
-        if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
+        if: steps.cache-mvn.outputs.cache-hit != 'true'
         working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
         run: |
           echo "ciao fra"
