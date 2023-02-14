@@ -76,7 +76,7 @@ jobs:
         if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
         working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
         run: |
-          echo ${{steps.cache-mvn.out.cache-hit}}
+          echo "${{steps.cache-mvn.out.cache-hit}}"
           mvn clean install
 
              
