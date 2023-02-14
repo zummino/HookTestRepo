@@ -71,7 +71,19 @@ jobs:
               ${{ runner.os }}-m2-prova
               ${{ runner.os }}-m2-${{ github.event.release.v_1a_2a_m1 }}
       
-     
+      - name: Step prova
+        if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
+        working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
+        run: |
+          echo "ciao fra"
+          echo "${{steps.cache-mvn.out.cache-hit}}"
+          
+      - if: ${{steps.cache-mvn.out.cache-hit != 'true'}}        
+        working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
+        run: |
+          echo "ciao fra2"
+          echo "${{steps.cache-mvn.out.cache-hit}}"
+          
       - name: Step 7 - mvn clean install BACK-END
         if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
         working-directory: /home/runner/work/HookTestRepo/HookTestRepo/insert-here-your-web-app/angular-java-example-master
