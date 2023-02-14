@@ -67,9 +67,7 @@ jobs:
             path: ~/.m2
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: |
-              ${{ runner.os }}-m2-
               ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-              ${{ runner.os }}-m2-${{ github.event.release.tag_name }}
               ${{ runner.os }}-m2-${{ github.event.release.v_1a_2a_m1 }}
       
       - if: ${{steps.cache-mvn.out.cache-hit != 'true'}}
