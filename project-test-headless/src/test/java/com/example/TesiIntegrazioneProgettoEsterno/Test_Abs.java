@@ -38,7 +38,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Abs_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
+    Thread.sleep(3500);
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]")).click();
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]")).sendKeys("Marco");
@@ -51,7 +51,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/button[1]")).click();
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[2]/app-display-board[1]/div[1]/div[2]/button[1]")).click();
     driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
+    Thread.sleep(3500);
     assertEquals("4",driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[2]/app-display-board[1]/div[1]/div[1]")).getText());
     assertEquals("Marco",driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[2]/app-users[1]/div[1]/table[1]/tbody[1]/tr[4]/td[2]")).getText());
   }

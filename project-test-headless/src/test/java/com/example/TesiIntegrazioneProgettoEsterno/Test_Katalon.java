@@ -38,7 +38,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Katalon_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
+    Thread.sleep(3500);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).clear();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::input[1]")).sendKeys("Marco");
@@ -51,7 +51,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Email'])[1]/following::button[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::button[1]")).click();
     driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
+    Thread.sleep(3500);
     assertEquals("4",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Users Created'])[1]/following::div[1]")).getText());
     assertEquals("Marco",driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='abc3@gmail.com'])[1]/following::td[2]")).getText());
   }
