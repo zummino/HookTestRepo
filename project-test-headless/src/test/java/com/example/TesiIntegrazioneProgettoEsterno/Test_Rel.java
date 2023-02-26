@@ -49,10 +49,10 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	driver.findElement(By.xpath("//input[@placeholder='Email']")).clear();
 	driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("ciao@ciao.it");
 	driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
+	Thread.sleep(3500);
+	assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
 	driver.findElement(By.xpath("//button[normalize-space()='Get All Users']")).click();
-	driver.get("http://localhost:3001/");
-    Thread.sleep(3500);
-    assertEquals("4",driver.findElement(By.xpath("//div[normalize-space()='4']")).getText());
+	Thread.sleep(3500);    
     assertEquals("Marco",driver.findElement(By.xpath("//td[normalize-space()='Marco']")).getText());
   }
 
