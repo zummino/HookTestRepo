@@ -1,8 +1,9 @@
-<app-header x934107962964-x-test-tpl-1></app-header><div class="container" x934107962964-x-test-tpl-2>
+<app-header [userCount]="userCount" (getUsersEvent)="getAllUsers()"  x934107962964-x-test-tpl-1></app-header><div class="container" x934107962964-x-test-tpl-2>
 	<div class="row" x934107962964-x-test-hook-3>
 		<div class="col-md-7 mrgnbtm" x934107962964-x-test-hook-4>
 			<h2 x934107962964-x-test-hook-5>Create User</h2>
 			<form [formGroup]="userForm" (ngSubmit)="onSubmit()" x934107962964-x-test-hook-6>
+				
 				<div class="row" x934107962964-x-test-hook-7>
 					<div class="form-group col-md-6" x934107962964-x-test-hook-8>
 						<label for="exampleInputEmail1" x934107962964-x-test-hook-9>First Name</label>
@@ -13,6 +14,7 @@
 						<input type="text" class="form-control" formControlName="lastName" id="exampleInputPassword1" placeholder="Last Name" x934107962964-x-test-hook-13>
 					</div>
 				</div>
+				
 				<div class="row" x934107962964-x-test-hook-14>
 					<div class="form-group col-md-12" x934107962964-x-test-hook-15>
 						<label for="exampleInputEmail1" x934107962964-x-test-hook-16>Email</label>
