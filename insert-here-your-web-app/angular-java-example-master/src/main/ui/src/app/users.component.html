@@ -1,19 +1,20 @@
-<div class="container" x336104199042-x-test-tpl-1>  <h2 x336104199042-x-test-hook-2>Users</h2>
-  <table class="table table-bordered" x336104199042-x-test-hook-3>
-    <thead x336104199042-x-test-hook-4>
-      <tr x336104199042-x-test-hook-5>
-        <th x336104199042-x-test-hook-6>User Id</th>
-        <th x336104199042-x-test-hook-7>Firstname</th>
-        <th x336104199042-x-test-hook-8>Lastname</th>
-        <th x336104199042-x-test-hook-9>Email</th>
+<div class="container">
+  <h2>Users</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
       </tr>
     </thead>
-    <tbody x336104199042-x-test-hook-10>
-      <tr *ngFor="let user of users; let i = index" x336104199042-x-test-hook-11>
-        <td x336104199042-x-test-hook-12>{{i + 1}}</td>
-        <td x336104199042-x-test-hook-13>{{user.firstName}}</td>
-        <td x336104199042-x-test-hook-14>{{user.lastName}}</td>
-        <td x336104199042-x-test-hook-15>{{user.email}}</td>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
       </tr>
     </tbody>
   </table>
